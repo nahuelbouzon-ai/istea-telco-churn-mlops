@@ -4,3 +4,9 @@ train:
   max_iter: 200
   penalty: "l2"
   C: 1.0
+
+rf:
+  test_size: 0.2
+  random_state: 42
+  n_estimators: 200
+  max_depth: 8
