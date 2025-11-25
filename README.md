@@ -309,4 +309,4 @@ En DagsHub se visualizan:
 datos versionados
 modelos
 historial de experimentos (en etapas posteriores)
-prueba ci
+prueba ci34
