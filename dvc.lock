@@ -18,9 +18,9 @@ stages:
     outs:
     - path: metrics_rf.json
       hash: md5
-      md5: 2f2576bb135de5f1c3f7d72758373244
-      size: 92
+      md5: 2a2bcc783bfbfc989fbda2febbefaaaa
+      size: 91
     - path: models/model_rf.pkl
       hash: md5
-      md5: 09c6fc93b899391e983903ef4ba81bce
-      size: 4110841
+      md5: d998c1a9c09a75d36c73e842e8de0a23
+      size: 3695321

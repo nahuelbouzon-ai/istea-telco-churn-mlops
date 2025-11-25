@@ -10,6 +10,10 @@ jobs:
   dvc-ci:
     runs-on: ubuntu-latest
 
+    env:
+      DAGSHUB_USERNAME: ${{ secrets.DAGSHUB_USER }}
+      DAGSHUB_TOKEN: ${{ secrets.DAGSHUB_TOKEN }}
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -24,17 +28,13 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install dvc dvc[s3] dvc[gs] dvc[gdrive]
+          pip install "dvc[s3]"
 
-      - name: Configure DVC remote
-        run: |
-          dvc remote modify origin --local auth basic
-          dvc remote modify origin --local user ${{ secrets.DAGSHUB_USER }}
-          dvc remote modify origin --local password ${{ secrets.DAGSHUB_TOKEN }}
+
 
       - name: DVC Pull
         run: |
-          dvc pull -v
+          dvc pull -r dagshub_remote -v
 
       - name: Run DVC pipeline
         run: |
