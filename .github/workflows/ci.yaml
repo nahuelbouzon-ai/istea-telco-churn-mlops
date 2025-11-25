@@ -34,7 +34,7 @@ jobs:
 
       - name: DVC Pull
         run: |
-          dvc pull -v
+          dvc pull -r dagshub_remote -v
 
       - name: Run DVC pipeline
         run: |
