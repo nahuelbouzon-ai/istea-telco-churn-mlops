@@ -32,7 +32,7 @@ jobs:
           dvc remote modify origin --local user ${{ secrets.DAGSHUB_USER }}
           dvc remote modify origin --local password ${{ secrets.DAGSHUB_TOKEN }}
 
-      - name: DVC Pull data/model artifacts
+      - name: DVC Pull
         run: |
           dvc pull -v
 
@@ -40,7 +40,9 @@ jobs:
         run: |
           dvc repro -v
 
-      - name: Upload metrics to GitHub Actions log
+      - name: Show metrics
         run: |
+          echo "Baseline metrics:"
           cat metrics.json || true
+          echo "RandomForest metrics:"
           cat metrics_rf.json || true
