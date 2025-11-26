@@ -20,3 +20,4 @@ GitHub: https://github.com/nahuelbouzon-ai/istea-telco-churn-mlops
 DagsHub: https://dagshub.com/nahuel.bouzon/istea-telco-churn-mlops
 
 En DagsHub se puede ver el versionado de datasets y modelos, y más adelante se usaría para visualizar experimentos adicionales si se continuara con el proyecto.
+25/11
