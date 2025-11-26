@@ -1,5 +1,21 @@
 schema: '2.0'
 stages:
+  preprocess:
+    cmd: python src/data_prep.py
+    deps:
+    - path: data/raw/telco_churn.csv
+      hash: md5
+      md5: 006527876bfe18c977d74eb4bc59443f
+      size: 873370
+    - path: src/data_prep.py
+      hash: md5
+      md5: d56d9429c51679755be68b85ca219d18
+      size: 1469
+    outs:
+    - path: data/processed/telco_churn_clean.csv
+      hash: md5
+      md5: ac40be7770ac4b2e22a43d2ec75a2bad
+      size: 883371
   train_rf:
     cmd: python src/train_rf.py
     deps:
@@ -24,19 +40,3 @@ stages:
       hash: md5
       md5: d998c1a9c09a75d36c73e842e8de0a23
       size: 3695321
-  preprocess:
-    cmd: python src/data_prep.py
-    deps:
-    - path: data/raw/telco_churn.csv
-      hash: md5
-      md5: 006527876bfe18c977d74eb4bc59443f
-      size: 873370
-    - path: src/data_prep.py
-      hash: md5
-      md5: d56d9429c51679755be68b85ca219d18
-      size: 1469
-    outs:
-    - path: data/processed/telco_churn_clean.csv
-      hash: md5
-      md5: ac40be7770ac4b2e22a43d2ec75a2bad
-      size: 883371
