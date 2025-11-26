@@ -1,42 +1,34 @@
 schema: '2.0'
 stages:
-  train_rf:
-    cmd: python src/train_rf.py
-    deps:
-    - path: data/processed/telco_churn_clean.csv
-      hash: md5
-      md5: ac40be7770ac4b2e22a43d2ec75a2bad
-      size: 883371
-    - path: params.yaml
-      hash: md5
-      md5: 892dda72060e9ca908a00bf5949e050e
-      size: 172
-    - path: src/train_rf.py
-      hash: md5
-      md5: 92753cf8269181ef5fe053d535bf34cf
-      size: 2591
-    outs:
-    - path: metrics_rf.json
-      hash: md5
-      md5: 2a2bcc783bfbfc989fbda2febbefaaaa
-      size: 91
-    - path: models/model_rf.pkl
-      hash: md5
-      md5: d998c1a9c09a75d36c73e842e8de0a23
-      size: 3695321
   preprocess:
     cmd: python src/data_prep.py
     deps:
     - path: data/raw/telco_churn.csv
-      hash: md5
       md5: 006527876bfe18c977d74eb4bc59443f
       size: 873370
     - path: src/data_prep.py
-      hash: md5
-      md5: d56d9429c51679755be68b85ca219d18
-      size: 1469
+      md5: 13196fd4cf994c3611456c7b0d02143a
+      size: 1184
     outs:
     - path: data/processed/telco_churn_clean.csv
-      hash: md5
-      md5: ac40be7770ac4b2e22a43d2ec75a2bad
+      md5: 006527876bfe18c977d74eb4bc59443f
       size: 883371
+  train_rf:
+    cmd: python src/train_rf.py
+    deps:
+    - path: data/processed/telco_churn_clean.csv
+      md5: 006527876bfe18c977d74eb4bc59443f
+      size: 883371
+    - path: params.yaml
+      md5: e41ddf312d5abc03484af9e342c75710
+      size: 147
+    - path: src/train_rf.py
+      md5: 92753cf8269181ef5fe053d535bf34cf
+      size: 2591
+    outs:
+    - path: metrics_rf.json
+      md5: 2c5b86d8681b0bfdca367644e5a6425c
+      size: 91
+    - path: models/model_rf.pkl
+      md5: d998c1a9c09a75d36c73e842e8de0a23
+      size: 3695321
