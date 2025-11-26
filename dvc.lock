@@ -20,8 +20,8 @@ stages:
       md5: 006527876bfe18c977d74eb4bc59443f
       size: 883371
     - path: params.yaml
-      md5: 892dda72060e9ca908a00bf5949e050e
-      size: 172
+      md5: e41ddf312d5abc03484af9e342c75710
+      size: 147
     - path: src/train_rf.py
       md5: 92753cf8269181ef5fe053d535bf34cf
       size: 2591
