@@ -2,9 +2,5 @@ pandas
 numpy
 scikit-learn
 joblib
-dvc
-mlflow
-matplotlib
-seaborn
-jupyter
 pyyaml
+dvc[s3]
